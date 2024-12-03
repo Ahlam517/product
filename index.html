@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDS</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <div class="w-75 mx-auto my-5">
+
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="ProductName" placeholder="" oninput=" validation(this)">
+            <div class="alert alert-danger my-3 py-1 d-none">must start with capital letter then, small charcters(2-7)</div>
+            <label for="ProductName">Product Name : </label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="ProductPrice" placeholder="" oninput=" validation(this)">
+            <label for="ProductPrice">Product Price :</label>
+          </div>
+
+          <div class="mb-3 form-floating">
+            <select class="form-select" id="ProductCategery" aria-label="Floating label select example">
+              <option selected>Open this select menu</option>
+              <option value="TV">TV</option>
+              <option value="Labtop">Laptop</option>
+              <option value="IPHONE">IPHONE</option>
+            </select>
+            <label for="ProductCategery">Select Your Device</label>
+          </div>
+
+          <div class="mb-3 form-floating">
+            <textarea name=""  class="form-control" id="ProductDescription" rows="9">  
+            </textarea>
+            <label for="ProductDescription">Product Description :</label>
+          </div>
+
+          <div class="mb-3 form-floating">
+            <input type="file" class="form-control" id="ProductImage" placeholder="">
+            <label for="ProductImage">Product Image :</label>
+          </div>
+
+          <button onclick=" addproduct()" class="btn btn-outline-info d-block ms-auto " id ="addBtn"> Add Product</button>
+          <button onclick="updateProduct()" class="btn btn-outline-success my-3 d-none ms-auto " id = "updateBtn" > Update Product</button>
+    </div>
+    <!-- ممكن نخليها فورم بس تايب الزرار button -->
+
+
+    <div class="container " >
+      <input type="text" class="form-control my-5 w-50 align-items-center" oninput ="searchfun(this.value)" id="SearchInput" placeholder="Search Product ">
+     <div class="row gy-4 gx-4" id="DataRow"></div>
+    </div>
+    
+   
+
+    <script src="./main.js"></script>
+</body>
+</html>
